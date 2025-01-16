@@ -25,7 +25,8 @@ function maxRainfall(weather) {
       max = weather[i].rainfall;
     }
   }
-  return weather.find((day) => day.rainfall === max).day;
+  let foundday = weather.find((day) => day.rainfall === max);
+  return foundday.day;
 }
 
 // For loop to render the weather data to create a table
@@ -58,5 +59,5 @@ let rainButton = document.getElementById("rainbutton");
 rainButton.addEventListener("click", () => {
   let maxRainfallValue = maxRainfall(daysWeather);
   let rainP = document.getElementById("rainP");
-  rainP.innerText = `The max rainfall is ${maxRainfallValue}`;
+  rainP.innerText = `The day of max rainfall is ${maxRainfallValue}`;
 });
