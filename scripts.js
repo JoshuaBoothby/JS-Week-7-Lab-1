@@ -25,7 +25,7 @@ function maxRainfall(weather) {
       max = weather[i].rainfall;
     }
   }
-  return max;
+  return weather.find((day) => day.rainfall === max).day;
 }
 
 // For loop to render the weather data to create a table
@@ -53,10 +53,10 @@ tempButton.addEventListener("click", () => {
   let tempP = document.getElementById("tempP");
   tempP.innerText = `The average temperature is ${avgTempValue}`;
 });
-// Event listener for the Max Rainfall button
+// Event listener for the Max Rainfall day button
 let rainButton = document.getElementById("rainbutton");
 rainButton.addEventListener("click", () => {
-  let maxRainValue = maxRainfall(daysWeather);
+  let maxRainfallValue = maxRainfall(daysWeather);
   let rainP = document.getElementById("rainP");
-  rainP.innerText = `The max rainfall is ${maxRainValue}`;
+  rainP.innerText = `The max rainfall is ${maxRainfallValue}`;
 });
