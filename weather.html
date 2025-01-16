@@ -47,7 +47,21 @@
 
     <main class="container">
       <h1>Welcome to the Weather Page</h1>
-      <div id="weathertable"></div>
+
+      <table class="table">
+        <thead>
+          <tr id="tableHead">
+            <th scope="col">Day</th>
+            <th scope="col">Temperature</th>
+            <th scope="col">Rain</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+      <button id="tempbutton">Average Temperature</button>
+      <p id="tempP"></p>
+      <button id="rainbutton">Max Rain</button>
+      <p id="rainP"></p>
     </main>
 
     <footer>

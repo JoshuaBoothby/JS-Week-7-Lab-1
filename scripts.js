@@ -1,5 +1,6 @@
 "use strict";
 
+// Array of Weather objects for Week 7 lab 1
 let daysWeather = [
   { day: "Sunday", temperature: 60, rainfall: 0.2 },
   { day: "Monday", temperature: 55, rainfall: 0 },
@@ -26,6 +27,38 @@ function maxRainfall(weather) {
   }
   return max;
 }
+let tableHead = document.getElementById("tableHead");
+let tableBody = document.getElementById("tableBody");
 
-// function to render the weather data to a table
-function weatherTable() {}
+// for loop to render the weather data to create a table
+for (let i = 0; i < daysWeather.length; i++) {
+  const weather = daysWeather[i];
+
+  let tr = document.createElement("tr");
+  let tdDay = document.createElement("td");
+  let tdTemp = document.createElement("td");
+  let tdRain = document.createElement("td");
+
+  tdDay.innerText = weather.day;
+  tdTemp.innerText = weather.temperature;
+  tdRain.innerText = weather.rainfall;
+
+  tr.appendChild(tdDay);
+  tr.appendChild(tdTemp);
+  tr.appendChild(tdRain);
+  tableBody.appendChild(tr);
+}
+
+let tempButton = document.getElementById("tempbutton");
+tempButton.addEventListener("click", () => {
+  let avgTempValue = avgTemp(daysWeather);
+  let tempP = document.getElementById("tempP");
+  tempP.innerText = `The average temperature is ${avgTempValue}`;
+});
+
+let rainButton = document.getElementById("rainbutton");
+rainButton.addEventListener("click", () => {
+  let maxRainValue = maxRainfall(daysWeather);
+  let rainP = document.getElementById("rainP");
+  rainP.innerText = `The max rainfall is ${maxRainValue}`;
+});
