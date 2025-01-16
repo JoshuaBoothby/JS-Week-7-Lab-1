@@ -30,7 +30,7 @@ function maxRainfall(weather) {
 let tableHead = document.getElementById("tableHead");
 let tableBody = document.getElementById("tableBody");
 
-// for loop to render the weather data to create a table
+// For loop to render the weather data to create a table
 for (let i = 0; i < daysWeather.length; i++) {
   const weather = daysWeather[i];
 
@@ -48,14 +48,14 @@ for (let i = 0; i < daysWeather.length; i++) {
   tr.appendChild(tdRain);
   tableBody.appendChild(tr);
 }
-
+// Event listener for the Average Temperature button
 let tempButton = document.getElementById("tempbutton");
 tempButton.addEventListener("click", () => {
   let avgTempValue = avgTemp(daysWeather);
   let tempP = document.getElementById("tempP");
   tempP.innerText = `The average temperature is ${avgTempValue}`;
 });
-
+// Event listener for the Max Rainfall button
 let rainButton = document.getElementById("rainbutton");
 rainButton.addEventListener("click", () => {
   let maxRainValue = maxRainfall(daysWeather);
