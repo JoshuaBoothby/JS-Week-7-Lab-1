@@ -27,8 +27,6 @@ function maxRainfall(weather) {
   }
   return max;
 }
-let tableHead = document.getElementById("tableHead");
-let tableBody = document.getElementById("tableBody");
 
 // For loop to render the weather data to create a table
 for (let i = 0; i < daysWeather.length; i++) {
